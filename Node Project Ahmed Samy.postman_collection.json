@@ -1,0 +1,878 @@
+{
+  "info": {
+    "_postman_id": "3bf104cc-6ebf-46e6-b927-7a041ec613ff",
+    "name": "Node Project Ahmed Samy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32422144"
+  },
+  "item": [
+    {
+      "name": "User Request",
+      "item": [
+        {
+          "name": "Signup User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"userName\": \"test2\",\r\n  \"email\": \"test22@example.com\",\r\n  \"password\": \"Ahmedeltonamly@2012\",\r\n  \"Cpassword\": \"Ahmedeltonamly@2012\",\r\n  \"phoneNumber\":\"01100014322\",\r\n  \"addresses\": [{\"street\":\"Salah Salem\",\"city\":\"Cairo\",\"country\":\"Egypt\" }]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/signup",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["signup"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Signin User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"Admin@example.com\",\r\n  \"password\": \"Ahmedeltonamly@2012\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/signin",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["signin"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Change Password",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjIxYTIzYmVmMjJmM2Q3NDM2MDBkZCIsImlhdCI6MTcwNjE3MTA3NCwiZXhwIjoxNzA2MTc0Njc0fQ.E9HqzHfjwss3dcxhKFbtlVL_fdmYG_OcZj1N6fAiGZc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"oldPassword\": \"Ahmedeltonamly@2012\",\r\n    \"newPassword\": \"Ahmedeltonamly@2020\",\r\n    \"CNewPassword\": \"Ahmedeltonamly@2020\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/changepassword",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["changepassword"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Forget Password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"771e6f01d4@emailaoa.pro\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/forgetpassword",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["forgetpassword"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Reset Password",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjIxYTIzYmVmMjJmM2Q3NDM2MDBkZCIsImlhdCI6MTcwNjE3MTA3NCwiZXhwIjoxNzA2MTc0Njc0fQ.E9HqzHfjwss3dcxhKFbtlVL_fdmYG_OcZj1N6fAiGZc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"password\": \"Ahmedeltonamly@2012\",\r\n    \"CPassword\": \"Ahmedeltonamly@2012\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/user/resetpassword/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjIzMGY1ZjFiMjM5Y2YxODVjYjE2ZiIsImlhdCI6MTcwNjE3Njk3OSwiZXhwIjoxNzA2MTgwNTc5fQ.rz5QQIjeMwz142co1NJrwSebhMpbsj_WMSAdM_zZHRU",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": [
+                "user",
+                "resetpassword",
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjIzMGY1ZjFiMjM5Y2YxODVjYjE2ZiIsImlhdCI6MTcwNjE3Njk3OSwiZXhwIjoxNzA2MTgwNTc5fQ.rz5QQIjeMwz142co1NJrwSebhMpbsj_WMSAdM_zZHRU"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjIxYWRkYmVmMjJmM2Q3NDM2MDBlOCIsImlhdCI6MTcwNjI4NjQxMSwiZXhwIjoxNzA2MjkwMDExfQ.HqAh6S5bGhGdnSTWnVVwxg56dxPPB66fSMWdoc8rdvU",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"userName\": \"NewName\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/updateuser/65b21a23bef22f3d743600dd",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["updateuser", "65b21a23bef22f3d743600dd"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deactivate User",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjIxYTIzYmVmMjJmM2Q3NDM2MDBkZCIsImlhdCI6MTcwNjE3MTA3NCwiZXhwIjoxNzA2MTc0Njc0fQ.E9HqzHfjwss3dcxhKFbtlVL_fdmYG_OcZj1N6fAiGZc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/deactivate",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["deactivate"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Category Request",
+      "item": [
+        {
+          "name": "Add Category",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjIxYWRkYmVmMjJmM2Q3NDM2MDBlOCIsImlhdCI6MTcwNjc4MjI2MywiZXhwIjoxNzA2Nzg1ODYzfQ.rHnoyr_a4eYcFOFXAdGC4qUJ41WmymCNFCyZT2x9L2k",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/C:/Users/ahmad/Desktop/iti-logo.png"
+                },
+                {
+                  "key": "categoryName",
+                  "value": "Electronics",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/category",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["category"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Category",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjIxYWRkYmVmMjJmM2Q3NDM2MDBlOCIsImlhdCI6MTcwNjQ2Mzk0NSwiZXhwIjoxNzA2NDY3NTQ1fQ.7qpC8e_fTwcJenZJ9MhKq9bfaJh0DEyEKRKFSC2etYA",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "categoryName",
+                  "value": "Clothes",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/C:/Users/ahmad/Desktop/download.jpeg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/category/65b247ac414e32813f3639cd",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["category", "65b247ac414e32813f3639cd"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Category",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjIxYWRkYmVmMjJmM2Q3NDM2MDBlOCIsImlhdCI6MTcwNjE4MjExNCwiZXhwIjoxNzA2MTg1NzE0fQ.mCn27bkwSygdO_hPjtB19TQTSwC2uEftQ3RRcdflV7w",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/category/65b246a3414e32813f3639c3",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["category", "65b246a3414e32813f3639c3"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Category",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/category",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["category"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Specific Category",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/category/Electronics",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["category", "Electronics"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Product Request",
+      "item": [
+        {
+          "name": "Add Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjIxYWRkYmVmMjJmM2Q3NDM2MDBlOCIsImlhdCI6MTcwNjc4MjI2MywiZXhwIjoxNzA2Nzg1ODYzfQ.rHnoyr_a4eYcFOFXAdGC4qUJ41WmymCNFCyZT2x9L2k",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/C:/Users/ahmad/Desktop/iti-logo.png"
+                },
+                {
+                  "key": "productName",
+                  "value": "Product 6",
+                  "type": "text"
+                },
+                {
+                  "key": "slug",
+                  "value": "product-6",
+                  "type": "text"
+                },
+                {
+                  "key": "priceAfterDiscount",
+                  "value": "42.00",
+                  "type": "text"
+                },
+                {
+                  "key": "finalPrice",
+                  "value": "42.00",
+                  "type": "text"
+                },
+                {
+                  "key": "category",
+                  "value": "65b247ac414e32813f3639cd",
+                  "type": "text"
+                },
+                {
+                  "key": "stock",
+                  "value": "55",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/product",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["product"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjIxYWRkYmVmMjJmM2Q3NDM2MDBlOCIsImlhdCI6MTcwNjYxODYwNCwiZXhwIjoxNzA2NjIyMjA0fQ.sBRQJUTOgnl83_As_GS4SVGRQlzKPEXLPGTjmhxCrLI",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "slug",
+                  "value": "product-22",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/C:/Users/ahmad/Desktop/download.jpeg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/product/65b8d20580d27dba734ed467",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["product", "65b8d20580d27dba734ed467"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjNjMDM4NjUxYzA4YzI1NWI5N2Q5NyIsImlhdCI6MTcwNjI4NzU2NywiZXhwIjoxNzA2MjkxMTY3fQ.fBHn1Jjovi-uoTHSzu5q4Xu5g8sRKElLDX0dHXcD888",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/product/65b3dfdc86756f711fc27a7b",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["product", "65b3dfdc86756f711fc27a7b"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Products Paginate",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/product?page=1&limit=2",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["product"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Products with Category",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/product/category/Electronics",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["product", "category", "Electronics"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Products with Slug",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/product/product-1",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["product", "product-1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Apply Coupon Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjNjMDM4NjUxYzA4YzI1NWI5N2Q5NyIsImlhdCI6MTcwNjM0NzI4NCwiZXhwIjoxNzA2MzUwODg0fQ.8DiZ3TWFjZOXNFnWmUkQEeeQmjps856baF2rQC10kcY",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"productId\": \"65b24a87495bf0aa3f2e26c4\",  // Replace with actual product ID\r\n  \"couponCode\": \"SAVE20\"  // Replace with a valid coupon code\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/product/applycoupon",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["product", "applycoupon"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Coupon Request",
+      "item": [
+        {
+          "name": "Add Coupon",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjIxYWRkYmVmMjJmM2Q3NDM2MDBlOCIsImlhdCI6MTcwNjE4NzE3MSwiZXhwIjoxNzA2MTkwNzcxfQ.XRUknkJRVZv1f0hLdFY8h88M-Y-mHERGRBzlqC_GeQ4",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"couponCode\": \"SAVE20\",\r\n  \"value\": 20,\r\n  \"expireIn\": \"2024-12-31\" \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/coupon",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["coupon"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Coupon",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjIxYWRkYmVmMjJmM2Q3NDM2MDBlOCIsImlhdCI6MTcwNjc4MjI2MywiZXhwIjoxNzA2Nzg1ODYzfQ.rHnoyr_a4eYcFOFXAdGC4qUJ41WmymCNFCyZT2x9L2k",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"expireIn\": \"2025-12-31\" \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/coupon/65b25d291ed2761bdf708193",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["coupon", "65b25d291ed2761bdf708193"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Coupon",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjIxYWRkYmVmMjJmM2Q3NDM2MDBlOCIsImlhdCI6MTcwNjc4MjI2MywiZXhwIjoxNzA2Nzg1ODYzfQ.rHnoyr_a4eYcFOFXAdGC4qUJ41WmymCNFCyZT2x9L2k",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/coupon/65b25d281ed2761bdf708191",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["coupon", "65b25d281ed2761bdf708191"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Coupon",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/coupon",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["coupon"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cart Request",
+      "item": [
+        {
+          "name": "Create Cart",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjNjMDM4NjUxYzA4YzI1NWI5N2Q5NyIsImlhdCI6MTcwNjI3ODk5NiwiZXhwIjoxNzA2MjgyNTk2fQ.4VWKSrHXSCy2sq8Y_bs2xxF7SPHazBkT9M5cVK1BpNo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/cart",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["cart"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Cart",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjNjMDM4NjUxYzA4YzI1NWI5N2Q5NyIsImlhdCI6MTcwNjM0NzI4NCwiZXhwIjoxNzA2MzUwODg0fQ.8DiZ3TWFjZOXNFnWmUkQEeeQmjps856baF2rQC10kcY",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"products\": [\r\n    {\r\n      \"productId\": \"65b24a87495bf0aa3f2e26c4\", \r\n      \"quantity\": 2 \r\n    },\r\n    {\r\n      \"productId\": \"65b24b07495bf0aa3f2e26cc\",\r\n      \"quantity\": 2\r\n    }\r\n\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/cart",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["cart"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Apply Coupon Cart",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjNjMDM4NjUxYzA4YzI1NWI5N2Q5NyIsImlhdCI6MTcwNjM0NzI4NCwiZXhwIjoxNzA2MzUwODg0fQ.8DiZ3TWFjZOXNFnWmUkQEeeQmjps856baF2rQC10kcY",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"couponCode\": \"SAVE20\" \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/cart/applycoupon",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["cart", "applycoupon"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Order Request",
+      "item": [
+        {
+          "name": "Make Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjNjMDM4NjUxYzA4YzI1NWI5N2Q5NyIsImlhdCI6MTcwNjM0NzI4NCwiZXhwIjoxNzA2MzUwODg0fQ.8DiZ3TWFjZOXNFnWmUkQEeeQmjps856baF2rQC10kcY",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"paymentMethod\":\"onlinePayment\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ahmed-samy-node-project-iti.onrender.com/order",
+              "protocol": "https",
+              "host": ["ahmed-samy-node-project-iti", "onrender", "com"],
+              "path": ["order"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Payment Confirmation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer sk_test_51OcquTH2SYWcBdJORrVmzzuSmBx5882zHoWIku9wGrRMPdWIoSvq885rkkEBAKi3HaG58FJxAGNAz7jplisWVIuz002dcCDFoq",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "payment_method",
+                  "value": "pm_card_visa",
+                  "type": "text"
+                },
+                {
+                  "key": "return_url",
+                  "value": "https://example.com/success",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api.stripe.com/v1/payment_intents/pi_3Od86kH2SYWcBdJO1uWcBevD/confirm",
+              "protocol": "https",
+              "host": ["api", "stripe", "com"],
+              "path": [
+                "v1",
+                "payment_intents",
+                "pi_3Od86kH2SYWcBdJO1uWcBevD",
+                "confirm"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
