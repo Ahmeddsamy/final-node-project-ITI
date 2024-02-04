@@ -17,6 +17,7 @@ import {
   signIn,
   signUp,
   updateUser,
+  verifyAccount,
 } from "./controller/user.controller.js";
 
 const userRoutes = express.Router();
@@ -26,6 +27,9 @@ userRoutes.post("/signup", validation(signUpSchema), signUp);
 
 // Signin - Validation but no auth required
 userRoutes.post("/signin", validation(signInSchema), signIn);
+
+// Verify - Validation but no auth required
+userRoutes.post("/user/verify/:token", verifyAccount);
 
 // Change Password - Validation and auth required
 userRoutes.patch(
