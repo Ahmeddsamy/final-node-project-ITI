@@ -158,16 +158,16 @@ export const resetPassword = async (req, res) => {
       return res.status(400).send("Invalid or expired token");
     }
 
-    const { password, Cpassword } = req.body;
+    const { newPassword, CNewPassword } = req.body;
 
     // Check if passwords match
-    if (password !== Cpassword) {
+    if (newPassword !== CNewPassword) {
       return res.status(400).send("Passwords do not match");
     }
 
     try {
       // Hash the new password
-      const hashedPassword = await bcrypt.hash(password, 12);
+      const hashedPassword = await bcrypt.hash(newPassword, 12);
 
       // Update the user's password in the database
       await userModel.findByIdAndUpdate(decoded.id, {
