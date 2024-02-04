@@ -29,7 +29,7 @@ export const signUp = async (req, res) => {
         addresses,
       });
       let token = jwt.sign({ id: newUser._id }, "NewUser");
-      let url = `http://localhost:3000/user/verify/${token}`;
+      let url = `https://ahmed-samy-node-project-iti.onrender.com/user/verify/${token}`;
       await sendVerificationMail(email, url);
       await newUser.save();
       res.status(201).json({ message: "User created successfully", newUser });
@@ -145,7 +145,7 @@ export const forgetPassword = async (req, res) => {
   }
 
   let token = jwt.sign({ id: user._id }, "ResetPassword", { expiresIn: "1h" });
-  let url = `http://localhost:3000/user/resetpassword/${token}`;
+  let url = `https://ahmed-samy-node-project-iti.onrender.com/user/resetpassword/${token}`;
   sendPasswordResetMail(email, url);
   res.send("Password reset email sent");
 };
