@@ -119,10 +119,10 @@ export const getAllProducts = async (req, res) => {
 // Get Specific Products with Slug
 export const getProductBySlug = async (req, res) => {
   try {
-    const { slug } = req.params;
+    const { id } = req.params; // Use the ID from the request parameters
 
-    // Use the slug to find the product
-    const product = await productModel.findOne({ slug });
+    // Use the ID to find the product
+    const product = await productModel.findById(id); // Changed findOne({ slug }) to findById(id)
 
     if (!product) {
       return res.status(404).json({ error: "Product not found" });
@@ -130,6 +130,8 @@ export const getProductBySlug = async (req, res) => {
 
     return res.json(product);
   } catch (error) {
+    // It's a good idea to log the error for debugging purposes
+    console.error("Failed to fetch the product:", error);
     return res.status(500).json({ error: "Failed to fetch the product" });
   }
 };

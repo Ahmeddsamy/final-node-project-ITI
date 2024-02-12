@@ -31,6 +31,6 @@ productRoutes.patch(
 productRoutes.delete("/product/:id", auth, deleteProduct);
 productRoutes.get("/product", getAllProducts);
 productRoutes.get("/product/category/:categoryName", getProductsByCategory);
-productRoutes.get("/product/:slug", getProductBySlug);
+productRoutes.get("/product/:id", getProductBySlug);
 productRoutes.post("/product/applycoupon", auth, applyCouponToProduct);
 export default productRoutes;
