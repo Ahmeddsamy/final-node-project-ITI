@@ -23,12 +23,16 @@ productRoutes.post(
 );
 productRoutes.patch(
   "/product/:id",
-  upload.single("image"),
-  auth,
-  validation(updateProductSchema),
+  // upload.single("image"),
+  // auth,
+  // validation(updateProductSchema),
   updateProduct
 );
-productRoutes.delete("/product/:id", auth, deleteProduct);
+productRoutes.delete(
+  "/product/:id",
+  // auth,
+  deleteProduct
+);
 productRoutes.get("/product", getAllProducts);
 productRoutes.get("/product/category/:categoryName", getProductsByCategory);
 productRoutes.get("/product/:id", getProductBySlug);
