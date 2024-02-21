@@ -17,8 +17,8 @@ const productRoutes = express.Router();
 productRoutes.post(
   "/product",
   upload.single("image"),
-  auth,
-  validation(addProductSchema),
+  // auth,
+  // validation(addProductSchema),
   addProduct
 );
 productRoutes.patch(
