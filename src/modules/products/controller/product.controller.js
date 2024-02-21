@@ -68,20 +68,20 @@ export const deleteProduct = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const userId = req.userID;
+    // const userId = req.userID;
 
     // Check if the user is an admin or the creator of the product
-    const user = await userModel.findById(userId);
-    const product = await productModel.findById(id);
+    // const user = await userModel.findById(userId);
+    // const product = await productModel.findById(id);
 
-    if (
-      !(
-        user &&
-        (user.role === "admin" || product.createdBy.toString() === userId)
-      )
-    ) {
-      return res.status(403).json({ error: "Permission denied" });
-    }
+    // if (
+    //   !(
+    //     user &&
+    //     (user.role === "admin" || product.createdBy.toString() === userId)
+    //   )
+    // ) {
+    //   return res.status(403).json({ error: "Permission denied" });
+    // }
 
     const deletedProduct = await productModel.findByIdAndDelete(id);
     if (!deletedProduct) {
