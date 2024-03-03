@@ -82,3 +82,32 @@ export const getOrderDetails = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+// Gett User Orders
+// Get User Orders
+export const getUserOrders = async (req, res) => {
+  try {
+    const userId = req.userID; // Assuming userID is set in the request, similar to your other controllers
+
+    // Find the user to ensure they exist
+    const user = await userModel.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Find all orders by userId
+    const orders = await orderModel.find({ userId }).populate({
+      path: 'products.productId',
+      model: 'Product' // Ensure this matches your Product model name
+    });
+
+    if (!orders || orders.length === 0) {
+      return res.status(404).json({ message: "No orders found for this user" });
+    }
+
+    // Return the found orders to the client
+    res.status(200).json(orders);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
