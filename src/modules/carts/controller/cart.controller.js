@@ -142,3 +142,35 @@ export const applyCouponToCart = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+// Get User Cart
+// Get Current User Cart
+export const getCurrentUserCart = async (req, res) => {
+  try {
+    const userId = req.userID; // Assuming userID is set in the request, similar to your other controllers
+
+    // Find the user to ensure they exist
+    const user = await userModel.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Find the cart by userId
+    const cart = await cartModel
+      .findOne({ userId })
+      .populate({
+        path: "products.productId",
+        model: "Product", // Ensure this matches your Product model name
+      })
+      .populate("couponId", "Coupon"); // Populate the couponId field if necessary
+
+    if (!cart) {
+      return res.status(404).json({ message: "Cart not found" });
+    }
+
+    // Return the found cart to the client
+    res.status(200).json(cart);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
